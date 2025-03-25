@@ -1,4 +1,4 @@
-package pertemuan6;
+package Pertemuan6;
 
 public class MataKuliah {
     String kode;
@@ -30,6 +30,10 @@ public class MataKuliah {
         } else {
             return 0.0;
         }
+    }
+
+    public String display() {
+        return kode + " - " + namaMK + " - " + indexNilai + " - " + sks;
     }
 
     public int getSks() {

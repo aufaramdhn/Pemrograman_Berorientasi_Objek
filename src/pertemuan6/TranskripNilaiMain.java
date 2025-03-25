@@ -1,4 +1,4 @@
-package P6_233040028;
+package Pertemuan6;
 
 public class TranskripNilaiMain {
     public static void main(String[] args) {

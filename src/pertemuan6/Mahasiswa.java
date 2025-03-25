@@ -1,21 +1,20 @@
-package pertemuan6;
+package Pertemuan6;
 
 public class Mahasiswa {
-    private static String NRP;
-    private static String nama;
+    private String NRP;
+    private String nama;
 
     public Mahasiswa(String nRP, String nama) {
-        super();
-        this.NRP = NRP;
+        this.NRP = nRP;
         this.nama = nama;
     }
 
     public String display() {
-        return "NRP: " + NRP + "\nNama: " + nama;
+        return "NRP: " + NRP + ", Nama: " + nama;
     }
 
-    public String getNRP() {
-        return NRP;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public void setNRP(String NRP) {
@@ -26,7 +25,8 @@ public class Mahasiswa {
         return nama;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public String getNRP() {
+        return NRP;
     }
 }
+

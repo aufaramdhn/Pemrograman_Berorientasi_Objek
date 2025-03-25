@@ -1,6 +1,4 @@
-package pertemuan6;
-
-import pertemuan5.MataKuliah;
+package Pertemuan6;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,14 +8,31 @@ public class KartuHasilStudi {
     private double ips;
     private List<MataKuliah> daftarMataKuliah;
 
-    public KartuHasilStudi(String semester, double ips, List<MataKuliah> daftarMataKuliah) {
-        super();
+    public KartuHasilStudi(String semester) {
         this.semester = semester;
-        this.daftarMataKuliah = new ArrayList<MataKuliah>();
+        this.daftarMataKuliah = new ArrayList<>();
     }
 
     public void addMataKuliah(MataKuliah mataKuliah) {
         daftarMataKuliah.add(mataKuliah);
+        hitungIPS();
+    }
+    public void hitungIPS() {
+        double totalBobot = 0;
+        double totalSKS = 0;
+        for (MataKuliah mk : daftarMataKuliah) {
+            totalBobot += mk.nilaiIndex() * mk.getSks();
+            totalSKS += mk.getSks();
+        }
+        ips = (totalSKS > 0) ? totalBobot / totalSKS : 0;
+    }
+
+    public int getTotalSKS() {
+        int totalSKS = 0;
+        for (MataKuliah mk : daftarMataKuliah) {
+            totalSKS += mk.getSks();
+        }
+        return totalSKS;
     }
 
     public String display() {
@@ -29,13 +44,8 @@ public class KartuHasilStudi {
         return sb.toString();
     }
 
-    public void hitungIPS() {
-        double totalBobot = 0;
-        double totalSKS = 0;
-        for (MataKuliah mk : daftarMataKuliah) {
-            totalBobot += mk.nilaiIndex() * mk.getSks();
-            totalSKS += mk.getSks();
-        }
-        ips = totalBobot / totalSKS;
+    public double getIPS() {
+        return ips;
     }
 }
+
