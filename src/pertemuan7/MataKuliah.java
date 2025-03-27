@@ -5,9 +5,9 @@ public class MataKuliah {
     String namaMK;
     int sks;
     String indexNilai;
-    String dosen;
+    Dosen dosen;
 
-    public MataKuliah(String kode, String nama, int sks, String indexNilai, String dosen) {
+    public MataKuliah(String kode, String nama, int sks, String indexNilai, Dosen dosen) {
         super();
         this.kode = kode;
         this.namaMK = nama;
@@ -36,7 +36,7 @@ public class MataKuliah {
     }
 
     public String display() {
-        return kode + " - " + namaMK + " - " + indexNilai + " - " + sks + " - " + dosen;
+        return kode + " - " + namaMK + " - " + indexNilai + " - " + sks + " - " + dosen.getNama();
     }
 
     public int getSks() {
@@ -45,5 +45,9 @@ public class MataKuliah {
 
     public String getIndexNilai() {
         return indexNilai;
+    }
+
+    public Dosen getDosen() {
+        return dosen;
     }
 }
