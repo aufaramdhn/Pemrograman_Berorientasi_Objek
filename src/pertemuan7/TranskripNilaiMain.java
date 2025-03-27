@@ -10,15 +10,17 @@ public class TranskripNilaiMain {
         MataKuliah mk2 = new MataKuliah("002", "Algorithm and Programming 2",  3, "BC" , dosen1);
         MataKuliah mk3 = new MataKuliah("003", "Pemrograman Berorientasi Objek",  3, "B" , dosen2);
 
-        KartuHasilStudi khs = new KartuHasilStudi("2");
-        khs.addMataKuliah(mk1);
-        khs.addMataKuliah(mk2);
-        khs.addMataKuliah(mk3);
+        Semester s1 = new Semester(2);
+        s1.addMataKuliah(mk1);
+        s1.addMataKuliah(mk2);
+
+        Semester s2 = new Semester(4);
+        s2.addMataKuliah(mk3);
 
         Mahasiswa mhs = new Mahasiswa("123", "Budi");
-
         TranskripNilai transkrip = new TranskripNilai(mhs);
-        transkrip.addKHS(khs);
+        transkrip.addSemester(s1);
+        transkrip.addSemester(s2);
         transkrip.display();
     }
 }
