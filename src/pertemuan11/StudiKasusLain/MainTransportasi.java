@@ -26,6 +26,7 @@ public class MainTransportasi {
         kereta.info();
         kereta.berangkat();
         kereta.tiba();
+//        kereta.jadiBeroperasi();
     }
 }
 
